@@ -21,6 +21,7 @@
   alert( undefined == 0 ); // false (3)
   ```
 * `null` равен только `undefined` и наоборот
+* `0 === -0 // true`, но `Object.is(0, -0) //false`
 
 <h2>Области видимости:</h2>
 * Глобальная - window

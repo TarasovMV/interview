@@ -43,7 +43,7 @@ const recursive = (tree) => {
     tree.forEach(node => {
         sum += node.v
         if(!node.c) {
-            return node.v
+            return
         }
         sum += recursive(node.c)
     })
@@ -67,5 +67,5 @@ const iteration = (tree) => {
     return sum
 }
 
-console.log(iteration(tree))
-// console.log(recursive(tree))
+// console.log(iteration(tree))
+console.log(recursive(tree))

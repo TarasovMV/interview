@@ -13,14 +13,15 @@ function breadthSearch(graph, start, end) {
     queue.push(start)
     while (queue.length > 0) {
         const current = queue.shift()
+        // проверка на пустоту, чтобы избежать ошибок
         if (!graph[current]) {
             graph[current] = []
         }
+        // условие нахождения маршрута
         if (graph[current].includes(end)) {
             return true
-        } else {
-            queue = [...queue, ...graph[current]]
         }
+        queue = [...queue, ...graph[current]]
     }
     return false
 }

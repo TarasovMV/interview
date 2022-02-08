@@ -5,13 +5,11 @@ function binarySearch(array, item) {
     let start = 0
     let end = array.length
     let middle;
-    let found = false
     let position = -1
-    while (found === false && start <= end) {
+    while (start <= end) {
         count+=1
         middle = Math.floor((start + end) / 2);
         if (array[middle] === item) {
-            found = true
             position = middle
             return position;
         }
@@ -30,6 +28,9 @@ function recursiveBinarySearch(array, item, start, end) {
     if (item === array[middle]) {
         return middle
     }
+    if (start >= end) {
+        return -1;
+    }
     if (item < array[middle]) {
         return recursiveBinarySearch(array, item, 0, middle - 1 )
     } else {
@@ -37,5 +38,5 @@ function recursiveBinarySearch(array, item, start, end) {
     }
 }
 
-console.log(recursiveBinarySearch(array, 0, 0, array.length))
+console.log(recursiveBinarySearch(array, 16, 0, array.length))
 console.log(count)
